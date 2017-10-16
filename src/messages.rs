@@ -251,9 +251,6 @@ impl Peer4Info {
             return Err(DecodeError::WrongLength);
         }
         let ip = Ipv4Addr::new(b[0], b[1], b[2], b[3]);
-        if !ip.is_global() {
-            return Err(DecodeError::InvalidAddress(ip));
-        }
         let port = ((b[4] as u16) << 8) + b[5] as u16;
         if port == 0 {
             return Err(DecodeError::OutOfRange);

@@ -1,5 +1,3 @@
-#![feature(ip, question_mark)]
-
 extern crate bencode;
 extern crate mio;
 extern crate rand;
